@@ -1,0 +1,380 @@
+$primary: #0755ff;
+$secondary: #ffff77;
+@mixin portable {
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}
+
+header {
+  transition: 0.3s ease-in;
+  height: 50px;
+  // padding-left: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+
+  img {
+    width: 35px;
+    height: 35px;
+    padding-left: 30px;
+  }
+  .login-btn {
+    width: 90px;
+    height: 40px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+    background-color: $primary;
+    font-size: 15px;
+    color: white;
+    font-weight: 600;
+  }
+  .profile {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    padding: 1px;
+    border: 2px solid $primary;
+  }
+  .only {
+    margin-right: 30px;
+  }
+
+  background-color: rgb(255, 255, 255);
+  .search-btn {
+    margin-right: 20px;
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
+    cursor: pointer;
+    border: none;
+    border-radius: 50%;
+    font-size: 20px;
+    color: $primary;
+  }
+  div {
+    width: 70%;
+    position: absolute;
+
+    z-index: 1;
+    // top: 0px;
+    right: 10px;
+    height: 100%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s ease;
+    transform: translateX(120%);
+
+    form {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      input {
+        position: relative;
+        width: 60%;
+        height: 60%;
+        padding-right: 50px;
+
+        padding-left: 10px;
+        border-radius: 20px;
+        outline: none;
+        -webkit-tap-highlight-color: transparent;
+        border: 1px solid black;
+        transform: translateX(0);
+        font-size: 1em;
+      }
+      button {
+        width: 40px;
+        height: 40px;
+        border-radius: 20px;
+        font-size: 1em;
+        border: none;
+        background-color: transparent;
+
+        top: 0;
+        right: 0;
+        bottom: 0;
+      }
+    }
+  }
+  .search-active {
+    transform: translateY(0);
+  }
+}
+main {
+  transition: 0.3s ease-in;
+  width: 100%;
+  height: 91vh;
+  .main {
+    height: 85vh;
+    position: relative;
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+  .tabs {
+    width: 100%;
+    height: 45px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    button {
+      width: 30%;
+      height: 80%;
+      border: none;
+      border-radius: 10px;
+      outline: none;
+      -webkit-tap-highlight-color: transparent;
+      transition: 0.3s ease-in;
+      font-weight: 600;
+    }
+    .btn-active {
+      background-color: $primary;
+      color: white;
+    }
+  }
+}
+.main-blur {
+  pointer-events: none;
+}
+.main-slide-in {
+  overflow-y: hidden;
+}
+
+.image_container {
+  p {
+    text-align: center;
+    font-size: 15px;
+    font-weight: 500;
+  }
+  .pageBtn {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    button {
+      width: 40px;
+      height: 40px;
+      font-size: 20px;
+      border: none;
+      margin-left: 10px;
+      outline: none;
+      -webkit-tap-highlight-color: transparent;
+      border-radius: 50%;
+      transition: 0.5s ease-in;
+    }
+    .active {
+      background-color: $primary;
+      color: white;
+    }
+  }
+}
+.blur {
+  pointer-events: unset;
+  filter: blur(8px);
+  transition: 0.2s ease-out;
+}
+.my-masonry-grid {
+  display: flex;
+  margin-left: -10px; /* gutter size offset */
+  width: auto;
+  overflow: auto;
+}
+.my-masonry-grid_column {
+  padding-left: 10px; /* gutter size */
+  background-clip: padding-box;
+}
+
+/* Style your items */
+.my-masonry-grid_column > div {
+  /* change div to reference your elements you put in <Masonry> */
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 30px;
+  @include portable() {
+    border-radius: 20px;
+    background: #ffffff;
+    box-shadow: 5px 5px 10px #d9d9d9, -5px -5px 10px #ffffff;
+    margin-bottom: 10px;
+    padding: 5px 5px;
+
+    p {
+      font-size: 15px;
+      text-transform: capitalize;
+      text-align: center;
+
+      font-weight: bold;
+      @include portable() {
+        font-size: 0.8rem;
+      }
+    }
+  }
+  img {
+    width: 97%;
+    object-fit: cover;
+    @include portable() {
+      width: 100%;
+      border-radius: 20px;
+    }
+  }
+  div {
+    width: 80%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    button {
+      width: 30px;
+      height: 30px;
+      border: none;
+      background-color: transparent;
+      -webkit-tap-highlight-color: transparent;
+      outline: none;
+      font-size: 20px;
+      a {
+        text-decoration: none;
+        color: black;
+      }
+      .fa-heart {
+        color: $primary;
+      }
+    }
+  }
+}
+
+.search-error {
+  width: 100%;
+  height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  img {
+    width: 300px;
+  }
+  p {
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+  }
+}
+.login-popup {
+  padding: 40px 0;
+  width: 95%;
+  height: 250px;
+  background-color: rgb(255, 255, 255);
+  position: fixed;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -20%);
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.3s ease-in-out;
+  z-index: -2;
+  box-shadow: 10px 10px 10px rgba($color: #000000, $alpha: 0.2);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #ffffff;
+  flex-direction: column;
+  h2 {
+    font-size: 25px;
+    color: $primary;
+  }
+
+  div {
+    width: 90%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    button {
+      width: 100px;
+      height: 35px;
+      border: none;
+      border-radius: 10px;
+      outline: none;
+      -webkit-tap-highlight-color: transparent;
+      font-weight: 600;
+      font-size: 15px;
+      text-transform: uppercase;
+    }
+    .login {
+      background-color: $primary;
+      color: white;
+    }
+    .cancel {
+      background-color: $secondary;
+    }
+  }
+}
+.login-active {
+  opacity: 1;
+  pointer-events: initial;
+  z-index: 1;
+}
+.profile-page {
+  width: 100%;
+  height: 100%;
+
+  position: fixed;
+  background-color: white;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  transform: translateX(100%);
+  transition: 0.3s ease-in;
+
+  div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    width: 80%;
+    height: 30%;
+    img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      padding: 5px;
+      border: 3px solid $primary;
+    }
+  }
+  button {
+    width: 150px;
+    height: 40px;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+    background-color: $secondary;
+    font-size: 17px;
+    font-weight: 600;
+  }
+  p {
+    font-weight: 600;
+    color: gray;
+  }
+}
+.slide-in {
+  transform: translateX(0);
+}
+.liked {
+  h2 {
+    padding-left: 10px;
+    color: $primary;
+  }
+}

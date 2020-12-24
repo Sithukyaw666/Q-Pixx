@@ -1,38 +1,513 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+header {
+  -webkit-transition: 0.3s ease-in;
+  transition: 0.3s ease-in;
+  height: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  overflow: hidden;
+  background-color: white;
+}
+
+header img {
+  width: 35px;
+  height: 35px;
+  padding-left: 30px;
+}
+
+header .login-btn {
+  width: 90px;
+  height: 40px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+  background-color: #0755ff;
+  font-size: 15px;
+  color: white;
+  font-weight: 600;
+}
+
+header .profile {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  padding: 1px;
+  border: 2px solid #0755ff;
+}
+
+header .only {
+  margin-right: 30px;
+}
+
+header .search-btn {
+  margin-right: 20px;
+  width: 40px;
+  height: 40px;
+  background-color: transparent;
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+  cursor: pointer;
+  border: none;
+  border-radius: 50%;
+  font-size: 20px;
+  color: #0755ff;
+}
+
+header div {
+  width: 70%;
+  position: absolute;
+  z-index: 1;
+  right: 10px;
+  height: 100%;
+  background-color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
+  -webkit-transform: translateX(120%);
+          transform: translateX(120%);
+}
+
+header div form {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+}
+
+header div form input {
+  position: relative;
+  width: 60%;
+  height: 60%;
+  padding-right: 50px;
+  padding-left: 10px;
+  border-radius: 20px;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+  border: 1px solid black;
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+  font-size: 1em;
+}
+
+header div form button {
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  font-size: 1em;
+  border: none;
+  background-color: transparent;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+
+header .search-active {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+
+main {
+  -webkit-transition: 0.3s ease-in;
+  transition: 0.3s ease-in;
+  width: 100%;
+  height: 91vh;
+}
+
+main .main {
+  height: 85vh;
+  position: relative;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+main .tabs {
+  width: 100%;
+  height: 45px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main .tabs button {
+  width: 30%;
+  height: 80%;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-transition: 0.3s ease-in;
+  transition: 0.3s ease-in;
+  font-weight: 600;
+}
+
+main .tabs .btn-active {
+  background-color: #0755ff;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.main-blur {
+  pointer-events: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.main-slide-in {
+  overflow-y: hidden;
+}
+
+.image_container p {
+  text-align: center;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.image_container .pageBtn {
+  width: 100%;
+  height: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.image_container .pageBtn button {
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  border: none;
+  margin-left: 10px;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+  border-radius: 50%;
+  -webkit-transition: 0.5s ease-in;
+  transition: 0.5s ease-in;
+}
+
+.image_container .pageBtn .active {
+  background-color: #0755ff;
+  color: white;
+}
+
+.blur {
+  pointer-events: unset;
+  -webkit-filter: blur(8px);
+          filter: blur(8px);
+  -webkit-transition: 0.2s ease-out;
+  transition: 0.2s ease-out;
+}
+
+.my-masonry-grid {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: -10px;
+  /* gutter size offset */
+  width: auto;
+  overflow: auto;
+}
+
+.my-masonry-grid_column {
+  padding-left: 10px;
+  /* gutter size */
+  background-clip: padding-box;
+}
+
+/* Style your items */
+.my-masonry-grid_column > div {
+  /* change div to reference your elements you put in <Masonry> */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 30px;
+}
+
+@media screen and (max-width: 768px) {
+  .my-masonry-grid_column > div {
+    border-radius: 20px;
+    background: #ffffff;
+    -webkit-box-shadow: 5px 5px 10px #d9d9d9, -5px -5px 10px #ffffff;
+            box-shadow: 5px 5px 10px #d9d9d9, -5px -5px 10px #ffffff;
+    margin-bottom: 10px;
+    padding: 5px 5px;
   }
-  to {
-    transform: rotate(360deg);
+  .my-masonry-grid_column > div p {
+    font-size: 15px;
+    text-transform: capitalize;
+    text-align: center;
+    font-weight: bold;
   }
 }
+
+@media screen and (max-width: 768px) and (max-width: 768px) {
+  .my-masonry-grid_column > div p {
+    font-size: 0.8rem;
+  }
+}
+
+.my-masonry-grid_column > div img {
+  width: 97%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+@media screen and (max-width: 768px) {
+  .my-masonry-grid_column > div img {
+    width: 100%;
+    border-radius: 20px;
+  }
+}
+
+.my-masonry-grid_column > div div {
+  width: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.my-masonry-grid_column > div div button {
+  width: 30px;
+  height: 30px;
+  border: none;
+  background-color: transparent;
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+  font-size: 20px;
+}
+
+.my-masonry-grid_column > div div button a {
+  text-decoration: none;
+  color: black;
+}
+
+.my-masonry-grid_column > div div button .fa-heart {
+  color: #0755ff;
+}
+
+.search-error {
+  width: 100%;
+  height: 600px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.search-error img {
+  width: 300px;
+}
+
+.search-error p {
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.login-popup {
+  padding: 40px 0;
+  width: 95%;
+  height: 250px;
+  background-color: white;
+  position: fixed;
+  top: 30%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -20%);
+          transform: translate(-50%, -20%);
+  opacity: 0;
+  pointer-events: none;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+  z-index: -2;
+  -webkit-box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
+          box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #ffffff;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.login-popup h2 {
+  font-size: 25px;
+  color: #0755ff;
+}
+
+.login-popup div {
+  width: 90%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.login-popup div button {
+  width: 100px;
+  height: 35px;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+  font-weight: 600;
+  font-size: 15px;
+  text-transform: uppercase;
+}
+
+.login-popup div .login {
+  background-color: #0755ff;
+  color: white;
+}
+
+.login-popup div .cancel {
+  background-color: #ffff77;
+}
+
+.login-active {
+  opacity: 1;
+  pointer-events: initial;
+  z-index: 1;
+}
+
+.profile-page {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background-color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+  -webkit-transition: 0.3s ease-in;
+  transition: 0.3s ease-in;
+}
+
+.profile-page div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 80%;
+  height: 30%;
+}
+
+.profile-page div img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  padding: 5px;
+  border: 3px solid #0755ff;
+}
+
+.profile-page button {
+  width: 150px;
+  height: 40px;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+  background-color: #ffff77;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.profile-page p {
+  font-weight: 600;
+  color: gray;
+}
+
+.slide-in {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+}
+
+.liked h2 {
+  padding-left: 10px;
+  color: #0755ff;
+}
+/*# sourceMappingURL=App.css.map */
